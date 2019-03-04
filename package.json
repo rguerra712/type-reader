@@ -1,0 +1,57 @@
+{
+  "name": "serverless-react-boilerplate",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "npm run build:client && sls offline start --exec \"webpack-dev-server --config webpack.client.config.js --mode development\"",
+    "build": "sls package",
+    "build:client": "webpack --config webpack.client.config.js --mode production",
+    "deploy": "sls deploy",
+    "test": "jest"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(css|less|sass)$": "identity-obj-proxy"
+    }
+  },
+  "dependencies": {
+    "@microstates/react": "^0.12.0",
+    "lodash": "^4.17.11",
+    "microstates": "^0.13.0",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "source-map-support": "^0.5.10"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/plugin-proposal-class-properties": "^7.3.4",
+    "@babel/preset-env": "^7.2.3",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/preset-stage-2": "^7.0.0",
+    "aws-sdk": "^2.388.0",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "^23.6.0",
+    "babel-loader": "^8.0.5",
+    "clean-webpack-plugin": "^1.0.0",
+    "css-loader": "^2.1.0",
+    "file-loader": "^3.0.1",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^23.6.0",
+    "mini-css-extract-plugin": "^0.5.0",
+    "null-loader": "^0.1.1",
+    "regenerator-runtime": "^0.13.1",
+    "serverless": "^1.36.1",
+    "serverless-export-env": "^1.2.0",
+    "serverless-offline": "^4.0.0",
+    "serverless-plugin-scripts": "^1.0.2",
+    "serverless-s3-deploy": "^0.8.0",
+    "serverless-webpack": "^5.2.0",
+    "url-loader": "^1.1.2",
+    "webpack": "^4.28.4",
+    "webpack-cli": "^3.2.1",
+    "webpack-dev-server": "^3.1.14",
+    "webpack-node-externals": "^1.7.2",
+    "webpack-stats-plugin": "^0.2.1"
+  }
+}
